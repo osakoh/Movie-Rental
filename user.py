@@ -34,7 +34,6 @@ class User:
         # filter(function, sequence)
         # sequence: sequence which needs to be filtered, it can
         # be sets, lists, tuples, or containers of any iterators
-
         movies_watched = list(filter(lambda movie: movie.watched, self.movies))
         return movies_watched
 
@@ -45,12 +44,23 @@ class User:
 
         return {
             'name': self.name,
-            'movie': movie_list
+            'movies': movie_list
 
             # 'movies': [
             #     i.json() for i in self.movies
             # ]
         }
+
+    @classmethod
+    def from_json(cls, json_data):
+        user = User(json_data['name'])
+
+        movies = []
+        for movie in json_data['movie']:
+            movies.append(Movie.movie_from_json(movie))
+        user.movies = movies
+
+        return user
 
 
 """"

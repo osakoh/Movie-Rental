@@ -1,1 +1,0 @@
-{"name": "Ann", "movie": [{"name": "Spiderman HomeComing", "genre": "Fiction", "watched": false}, {"name": "Iron man 3", "genre": "Fiction", "watched": false}, {"name": "Bad Boys 2", "genre": "Action", "watched": false}, {"name": "Just Go With It", "genre": "Comedy", "watched": false}]}
