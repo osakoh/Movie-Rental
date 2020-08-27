@@ -1,1 +1,0 @@
-{"name": "Jon", "movie": [{"name": "Heros", "genre": "Action", "watched": false}, {"name": "Triple Frontiers", "genre": "Adventure", "watched": false}, {"name": "Jumanji", "genre": "Action", "watched": false}, {"name": "Now You See Me", "genre": "Thriller", "watched": false}]}

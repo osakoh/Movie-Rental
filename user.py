@@ -37,6 +37,18 @@ class User:
         movies_watched = list(filter(lambda movie: movie.watched, self.movies))
         return movies_watched
 
+    def set_watched(self, name):
+        for movie in self.movies:
+            if name in movie.name:
+                movie.watched = True
+
+    def check_if_movie(self):
+        for movie in self.movies:
+            if len(movie < 1):
+                return True
+            else:
+                return False
+
     def user_json(self):
         movie_list = []
         for movie in self.movies:
@@ -52,15 +64,18 @@ class User:
         }
 
     @classmethod
-    def from_json(cls, json_data):
+    def from_json_file(cls, json_data):
         user = User(json_data['name'])
 
         movies = []
-        for movie in json_data['movie']:
+        for movie in json_data['movies']:
             movies.append(Movie.movie_from_json(movie))
         user.movies = movies
 
         return user
+
+    def __repr__(self):
+        return "User: {}".format(self.name)
 
 
 """"
@@ -85,6 +100,4 @@ class User:
 
             return user
 
-    def __repr__(self):
-        return "User: {}".format(self.name)
 """
