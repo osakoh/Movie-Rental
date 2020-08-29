@@ -52,35 +52,40 @@ def menu():
 
     while user_input != 0:
         if user_input == 1:  # add a movie
-            movie_name = input("Enter movie name: ").strip().capitalize()
-            movie_genre = input("Enter movie genre: ").strip().capitalize()
+            movie_name = input("Enter movie name: ").strip()
+            movie_genre = input("Enter movie genre: ").strip()
             user.add_movie(movie_name, movie_genre)
+
         elif user_input == 2:  # view list of movies
-            if not user.check_if_movie():  # first check if the user has movies
+            if user.emptylist(user.movies):  # first check if the user has movies
                 print("No movies yet, Enter (1) to add a movie!\n")
             else:
                 for count, movie in enumerate(user.movies):
                     print("{})".format(count + 1))
                     print("Name: {}\nGenre: {}\nWatched: {}\n".format(movie.name, movie.genre, movie.watched))
+
         elif user_input == 3:  # set  movie as watched
-            if not user.check_if_movie():  # first check if the user has movies
+            if user.emptylist(user.movies):  # first check if the user has movies
                 print("No movies in the list.")
             else:
-                movie_name = input("Enter the name of movie to set as watched: ").strip().title()
+                movie_name = input("Enter the name of movie to set as watched: ").strip()
                 user.set_watched(movie_name)
+
         elif user_input == 4:  # delete a movie
-            if not user.check_if_movie():  # first check if the user has movies
+            if user.emptylist(user.movies):  # first check if the user has movies
                 print("No movies in the list.")
             else:
-                movie_name = input("Enter the name of movie to set as watched: ").strip().capitalize()
+                movie_name = input("Enter the name of movie to set as watched: ").strip()
                 user.delete_movie(movie_name)
+
         elif user_input == 5:  # show watched movies
-            if not user.check_if_movie():  # first check if the user has watched any movie
+            if user.emptylist(user.watched_movies()):   # first check if the user has watched any movie
                 print("No movies watched")
             else:
                 for count, movie in enumerate(user.watched_movies()):
                     print("{})".format(count + 1))
                     print("Name: {}\nGenre: {}\nWatched: {}\n".format(movie.name, movie.genre, movie.watched))
+
         elif user_input == 6:  # save user profile
             with open(filename, 'w') as f:
                 json.dump(user.user_json(), f)

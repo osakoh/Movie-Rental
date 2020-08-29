@@ -42,12 +42,11 @@ class User:
             if name in movie.name:
                 movie.watched = True
 
-    def check_if_movie(self):
-        for movie in self.movies:
-            if len(movie < 1):
-                return True
-            else:
-                return False
+    def emptylist(self, myList):
+        if not myList:
+            return True
+        else:
+            return False
 
     def user_json(self):
         movie_list = []
