@@ -11,8 +11,7 @@ User should be able to:
 - [x] View list of watched movies.
 ---
 
-*Screenshot* 
----
+*Screenshots* 
 
 ![Screenshots](img/s1.png) | ![Screenshots](img/s2.png) 
 -------------------------- | --------------------------
