@@ -1,19 +1,21 @@
-## A simple lottery game written in Python.
+## Movie Rental Application.
 
 ### Requirements
 ---
-- [x] User can enter 6 numbers
-- [x] Lottery calculates 6 random numbers between 1 & 20.
-- [x] Match users numbers to lottery numbers.
-- [x] Calculate users winnings based on how many numbers were matched correctly.
+User should be able to:
+- [x] Create a profile.
+- [x] Add new movies to list/load movie(s) from file.
+- [x] View list of movies.
+- [x] Delete a movie from list.
+- [x] Track watched movies.
+- [x] View list of watched movies.
 ---
 
-##### Built using:
-* Random Module
-* Functions
-* Set comprehension
-* While loop
-* Split()
-
 *Screenshot* 
-![](screenshot.png)
+---
+
+![Screenshots](img/s1.png) | ![Screenshots](img/s2.png) 
+-------------------------- | --------------------------
+![Screenshots](img/s3.png) | ![Screenshots](img/s4.png)
+![Screenshots](img/s5.png) | ![Screenshots](img/s6.png)
+
